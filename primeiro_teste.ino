@@ -24,10 +24,11 @@ void loop() {
   // Tente ler dados do GPS
   while (ss.available() > 0) {
     char c = ss.read();
-    Serial.write(c); // Imprime os dados brutos do GPS para depuração
+    // Serial.write(c); // Imprime os dados brutos do GPS para depuração
     gps.encode(c);
   }
 
+  
   // Se houver uma nova localização disponível, imprima os dados
   if (gps.location.isUpdated()) {
     Serial.print(F("Latitude: "));
@@ -40,6 +41,8 @@ void loop() {
     Serial.println(gps.satellites.value());
     Serial.print(F("Precisão: "));
     Serial.println(gps.hdop.value());
+    Serial.println();
   }
+
 
 }

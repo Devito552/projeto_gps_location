@@ -41,8 +41,16 @@ void loop() {
     Serial.println(gps.satellites.value());
     Serial.print(F("Precisão: "));
     Serial.println(gps.hdop.value());
+    Serial.print(F("Data: "));
+    Serial.println(gps.date.value()); 
+    Serial.print(F("Hora: "));
+    Serial.print(gps.time.hour()-3);
+    Serial.print(F(":"));
+    Serial.println(gps.time.minute());
+    Serial.print(F("Velocidade: "));
+    Serial.println(gps.speed.value());
+    Serial.print(F("Course: "));
+    Serial.println(gps.course.value());
     Serial.println();
   }
-
-
 }

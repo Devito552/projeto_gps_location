@@ -48,9 +48,7 @@ void loop() {
     Serial.print(F(":"));
     Serial.println(gps.time.minute());
     Serial.print(F("Velocidade: "));
-    Serial.println(gps.speed.value());
-    Serial.print(F("Course: "));
-    Serial.println(gps.course.value());
+    Serial.println(gps.speed.kmph());
     Serial.println();
   }
 }
